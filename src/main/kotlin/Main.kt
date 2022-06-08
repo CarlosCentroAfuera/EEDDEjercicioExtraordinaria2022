@@ -4,6 +4,6 @@ var gson = Gson()
 
 fun main() {
     val examen = Examen()
-    examen.gestorDePersonas.personas.forEach { println(it) }
+    examen.personas.forEach { println(it) }
 }
 
