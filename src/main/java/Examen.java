@@ -12,7 +12,7 @@ public class Examen {
      * @return array con las personas que son hombres
      */
     public Persona[] obtenerHombres() {
-        // TODO 1p
+        // TODO 0.5p
         return personas;
     }
 
@@ -24,7 +24,7 @@ public class Examen {
      * @throws NullPointerException cuando subArray es null
      */
     public Persona[] obtenerMujeres(Persona[] subArray) throws PersonaNulaException {
-        // TODO 1,5p
+        // TODO 1p
         return personas;
     }
 
