@@ -1,60 +1,69 @@
 public class Examen {
 
-    public Persona[] personas;
+    public Pokemon[] pokemon;
 
     public Examen() {
-        personas = ObtenerPersonasRequest.Companion.get();
+        pokemon = ObtenerPersonasRequest.Companion.get();
     }
 
 
     /**
-     * busca en personas aquellas personas que son hombres y devuelve una array de "Personas" con ellas
-     * @return array con las personas que son hombres
+     * busca en personas aquellas Pokemon que están vivos (vida superior a 0)
+     * @return array con los pokemons vivos
      */
-    public Persona[] obtenerHombres() {
-        // TODO 0.5p
-        return personas;
-    }
-
-    /**
-     * busca en personas aquellas personas que son mujeres y devuelve una array de "Personas" con ellas
-     * @return array con las personas que son mujeres
-     * @param subArray array de personas sobre las que vas a buscar
-     * @throws PersonaNulaException cuando encuentras una persona que es null
-     * @throws NullPointerException cuando subArray es null
-     */
-    public Persona[] obtenerMujeres(Persona[] subArray) throws PersonaNulaException {
+    public Pokemon[] obtenerPokemonVivos() {
         // TODO 1p
-        return personas;
+        return pokemon;
     }
 
     /**
-     * busca en personas aquellas personas que tienen un pikachu como pokémon y devuelve una array de "Personas" formado por esas personas
-     * @return array con las personas que son tienen un pikachu
-     * @param subArray array de personas sobre las que vas a buscar
-     * @throws PersonaNulaException cuando encuentras una persona que es null
-     * @throws PokemonNuloException cuando encuentras un pokemon que es null
-     * @throws NullPointerException cuando subArray es null
+     * @return true si el pokemon está vivo
+     * @param pokemon array de personas sobre las que vas a buscar
+     * @throws VidaNegativaException cuando encuentras una pokemon con vida menor que 0
+     * @throws NullPointerException cuando el pokemon es null es null
      */
-    public Persona[] obtenerPikachus(Persona[] subArray) throws PersonaNulaException, PokemonNuloException {
-        // TODO 1,5p
-        return personas;
+    public boolean estaVivo(Pokemon pokemon) throws VidaNegativaException {
+        // TODO 1p
+        return false;
     }
 
     /**
-     * busca en personas aquellas personas que tienen un pokemon que se llama como "nombrePokemon" y que tiene como mínimo el nivel de "nivel"
-     * @return un array con las personas que cumple el criterio anterior
-     * @param subArray array de personas sobre las que vas a buscar
-     * @param nivel nivel mínimo el pokémon buscado
-     * @param nombrePokemon nombrePokemon del pokemon buscado
-     * @throws PersonaNulaException cuando encuentras una persona que es null
-     * @throws PokemonNuloException cuando encuentras un pokemon que es null
-     * @throws NullPointerException cuando subArray o nombrePokemon es null
-     * @throws PokemonNoEncontrado cuando el nombrePokemon no coincide con el nombrePokemon de ningún pokemon
+     * @return cuenta los pokemon que están vivos.
+     * @param pokemons array de personas sobre las que vas a buscar
+     * @throws VidaNegativaException cuando encuentras una pokemon con vida menor que 0
+     * @throws NullPointerException cuando el pokemon es null es null
      */
-    public Persona[] obtenerPokemonPorNombreYNivel(Persona[] subArray, String nombrePokemon, int nivel) throws PersonaNulaException, PokemonNuloException, PokemonNoEncontrado {
-        // TODO 2p
-        return personas;
+    public int contarVivos(Pokemon[] pokemons) throws VidaNegativaException {
+        // TODO 1p
+        return 1;
+    }
+
+    /**
+     * @return devuelve una array con los pokemon que están vivos.
+     * @param pokemons array de personas sobre las que vas a buscar
+     * @throws VidaNegativaException cuando encuentras una pokemon con vida menor que 0
+     * @throws NullPointerException cuando el pokemon es null es null
+     */
+    public Pokemon[] devolverVivos(Pokemon[] pokemons) throws VidaNegativaException {
+        // TODO 1p
+        return new Pokemon[0];
+    }
+
+    /**
+     * El pokemon 1 ataca al pokemon 2 quitándole vida. El pokemon le quita tantos puntos de vida como esté marcado en su ataque.
+     * Si el tipo del ataque es fuerte contra el tipo del pokemon objetivo, entonces quitará el doble.
+     * Ej:
+     * Ataque de Planta hace doble daño a pokemon de Agua.
+     * Ataque de Agua hace doble daño a pokemon de Fuego
+     * Ataque de Fuego hace doble daño a pokemon de Planta.
+     * Si el ataque es de tipo normal, siempre hace le mismo daño, independientemente del tipo del enemigo.
+     * @param pokemonAtacante pokemon que realiza el ataque
+     * @param pokemonDefensor pokemon que recibe el daño
+     * @throws VidaNegativaException cuando encuentras una persona que es null
+     * @throws NullPointerException cuando el pokemon es null es null
+     */
+    public void atacar(Pokemon pokemonAtacante, Pokemon pokemonDefensor) throws VidaNegativaException, PokemonNuloException {
+        // TODO 3p
     }
 
 }
